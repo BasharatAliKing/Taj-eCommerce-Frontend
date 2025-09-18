@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@theme {
+    --color-yellow:#F3D700;
+    --color-charkol:#4A4A4A;
+    --color-ligreen:#2e4d0f;
+    --color-primary:#e4ef7d;
+    --color-bimgreen:#1a4b3b;
+    --color-gray:#f1f1f1;
+    --color-liblack:#6d7a83;
+    --font-dancing:"Oswald", sans-serif;
+    --font-sketch:"Cabin Sketch", sans-serif;
+    --font-norican: "Norican", cursive;
+
+    --animate-bulb:  lights 4s .375s infinite;
+    --animate-scl: wiggle 0.3s ease-out
+}
+@keyframes lights{
+12.5%, 37.5%, 62.5%, 87.5% {
+    box-shadow: 0 0 7px 4px #fff;
+}
+25%, 50%, 75%, 100% {
+    box-shadow: 0 0 2px #fff;
+}
+}
+@keyframes wiggle{
+0% {
+	transform: scale(.9);
+	}
+33%{
+ 	transform: scale(1.0);
+ }
+66%{
+ 	transform: scale(0.9);
+ }
+	100% {
+			transform: scale(1.0);
+	}
+}
