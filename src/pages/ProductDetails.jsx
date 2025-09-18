@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import UserContext from "../useContext/UserContext";
 import { toast } from "react-toastify";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const ProductDetails = () => {
   const params = useParams();
   const { setCart } = useContext(UserContext);
@@ -17,7 +17,7 @@ const ProductDetails = () => {
   const getFoodItem = async () => {
     try {
       const response = await fetch(
-        `http://168.231.116.183:3000/getfooditembyid/${params.id}`,
+        `${API_URL}/getfooditembyid/${params.id}`,
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
@@ -33,7 +33,7 @@ const ProductDetails = () => {
   // ✅ Fetch all food items (to resolve suggestion IDs)
   const getAllFoodItems = async () => {
     try {
-      const response = await fetch("http://168.231.116.183:3000/getallfooditems", {
+      const response = await fetch(`${API_URL}/getallfooditems`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
@@ -133,7 +133,7 @@ const suggestedItems = allItems.filter((food) =>
         {/* Product Image */}
         <div>
           <img
-            src={`http://168.231.116.183:3000/${item.imageUrl}`}
+            src={`${API_URL}/${item.imageUrl}`}
             alt={item.name}
             className="rounded-lg shadow-md w-full max-h-[400px] object-cover"
           />
@@ -188,7 +188,7 @@ const suggestedItems = allItems.filter((food) =>
                     onChange={() => toggleExtra(extra)}
                   />
                   <img
-                    src={`http://168.231.116.183:3000/${extra.imageUrl}`}
+                    src={`${API_URL}/${extra.imageUrl}`}
                     alt={extra.name}
                     className="w-12 h-12 rounded object-cover"
                   />

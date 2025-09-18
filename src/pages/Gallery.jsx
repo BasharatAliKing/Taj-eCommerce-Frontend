@@ -1,6 +1,6 @@
 import { img } from 'framer-motion/client';
 import React, { useEffect, useState } from 'react'
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const Gallery = () => {
     const [item,setItems]=useState([]);
     //*********************************************** */
@@ -8,7 +8,7 @@ const Gallery = () => {
   //************************************************ */
   const getallgalleryImages = async () => {
     try {
-      const response = await fetch("http://168.231.116.183:3000/getGalleryImages", {
+      const response = await fetch(`${API_URL}/getGalleryImages`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -37,7 +37,7 @@ getallgalleryImages();
        {
         item.map((val,index)=>(
             <div key={index}>
-                <img src={`http://168.231.116.183:3000/${val.image}`} className='h-40 sm:h-50 md:h-70 w-full' />
+                <img src={`${API_URL}/${val.image}`} className='h-40 sm:h-50 md:h-70 w-full' />
             </div>
         ))
        }

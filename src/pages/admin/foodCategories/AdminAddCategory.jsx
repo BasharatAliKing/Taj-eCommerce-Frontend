@@ -3,7 +3,7 @@ import Navbar from "../../../layouts/admin/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { toast } from "react-toastify";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const AdminAddCategory = () => {
     const navigate=useNavigate();
     const [form,setForm]=useState({
@@ -17,7 +17,7 @@ const AdminAddCategory = () => {
     const handleSubmit=async(e)=>{
         e.preventDefault();
         try{
-            const response=await fetch('http://168.231.116.183:3000/addcategory',{
+            const response=await fetch(`${API_URL}/addcategory`,{
                 method:"POST",
                 headers:{
                     'Content-Type':'application/json',

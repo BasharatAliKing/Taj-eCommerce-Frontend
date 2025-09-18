@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../useContext/UserContext"; // adjust path if needed
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const CartPage = () => {
   const { cart, setCart, total } = useContext(UserContext);
 
@@ -55,7 +55,7 @@ const CartPage = () => {
                   {/* Product Info */}
                   <div className="flex items-center gap-4">
                     <img
-                      src={`http://168.231.116.183:3000/${item.imageUrl}`}
+                      src={`${API_URL}/${item.imageUrl}`}
                       alt={item.name}
                       className="w-24 h-24 object-cover rounded-xl border"
                     />

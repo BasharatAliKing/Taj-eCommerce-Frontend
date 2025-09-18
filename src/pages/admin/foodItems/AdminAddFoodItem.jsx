@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { toast } from "react-toastify";
 import Select from "react-select";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const AdminAddFoodItem = () => {
   const navigate = useNavigate();
   const [allFoods, setAllFoods] = useState([]);
@@ -45,7 +45,7 @@ const AdminAddFoodItem = () => {
   // ✅ Get categories
   const getallCategories = async () => {
     try {
-      const response = await fetch("http://168.231.116.183:3000getallcategory", {
+      const response = await fetch(`${API_URL}/getallcategory`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -67,7 +67,7 @@ const AdminAddFoodItem = () => {
     }
   }
   try {
-    const response = await fetch("http://168.231.116.183:3000addfooditem", {
+    const response = await fetch(`${API_URL}/addfooditem`, {
       method: "POST",
       body: payload,
     });

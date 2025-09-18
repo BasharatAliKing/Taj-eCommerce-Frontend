@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const Product = () => {
   const params = useParams();
   const [item, setItem] = useState([]);
@@ -8,7 +8,7 @@ const Product = () => {
 
   const getallfoodItems = async () => {
     try {
-      const response = await fetch("http://168.231.116.183:3000/getallfoodItems", {
+      const response = await fetch(`${API_URL}/getallfoodItems`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -23,7 +23,7 @@ const Product = () => {
   };
   const getAllCategory = async () => {
     try {
-      const response = await fetch("http://168.231.116.183:3000/getallcategory", {
+      const response = await fetch(`${API_URL}/getallcategory`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const Product = () => {
             className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col items-center"
           >
             <img
-              src={`http://168.231.116.183:3000/${product.imageUrl}`}
+              src={`${API_URL}/${product.imageUrl}`}
               alt={product.name}
               className="w-full h-64 object-cover"
             />

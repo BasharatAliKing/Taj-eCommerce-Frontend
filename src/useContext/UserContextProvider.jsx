@@ -61,7 +61,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import UserContext from "./UserContext";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const UserContextProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [user, setUser] = useState({});
@@ -88,7 +88,7 @@ const UserContextProvider = ({ children }) => {
   const userAuthentication = async () => {
     if (!token) return;
     try {
-      const response = await fetch(`http://168.231.116.183:3000/user`, {
+      const response = await fetch(`${API_URL}/user`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

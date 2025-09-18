@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../../../layouts/admin/Navbar";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const AdminOrder = () => {
   const [item, setItem] = useState([]);
   //*********************************************** */
@@ -15,7 +15,7 @@ const AdminOrder = () => {
     if (!confirmDelete) return;
     try {
       const response = await fetch(
-        `http://168.231.116.183:3000/deleteOrderById/${id}`,
+        `${API_URL}/deleteOrderById/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -37,7 +37,7 @@ const AdminOrder = () => {
   //************************************************ */
   const getallorders = async () => {
     try {
-      const response = await fetch("http://168.231.116.183:3000/getallorders", {
+      const response = await fetch(`${API_URL}/getallorders`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const AdminOrder = () => {
   // CONFIRM order
   const confirmOrder = async (id) => {
     try {
-      const res = await fetch(`http://168.231.116.183:3000/orders/${id}/confirmed`, {
+      const res = await fetch(`${API_URL}/orders/${id}/confirmed`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
       });

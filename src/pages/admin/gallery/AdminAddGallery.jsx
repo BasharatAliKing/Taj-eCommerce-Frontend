@@ -3,7 +3,7 @@ import Navbar from "../../../layouts/admin/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { toast } from "react-toastify";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const AdminAddGallery = () => {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
@@ -30,7 +30,7 @@ const AdminAddGallery = () => {
     }
   }
   try {
-    const response = await fetch("http://168.231.116.183:3000/addImageGallery", {
+    const response = await fetch(`${API_URL}/addImageGallery`, {
       method: "POST",
       body: payload,
     });

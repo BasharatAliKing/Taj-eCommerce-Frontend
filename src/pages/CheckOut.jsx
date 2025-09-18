@@ -4,7 +4,7 @@ import Footer from "../layouts/Footer";
 import UserContext from "../useContext/UserContext";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const CheckoutPage = () => {
   const navigate = useNavigate();
   const { cart, total, setCart } = useContext(UserContext);
@@ -41,7 +41,7 @@ const CheckoutPage = () => {
     try {
       setLoading(true); // start loading
 
-      const response = await fetch("http://168.231.116.183:3000/order-food", {
+      const response = await fetch(`${API_URL}/order-food`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -233,7 +233,7 @@ const CheckoutPage = () => {
                   src={
                     val.imageUrl?.startsWith("http")
                       ? val.imageUrl
-                      : `http://168.231.116.183:3000/${val.imageUrl}`
+                      : `${API_URL}/${val.imageUrl}`
                   }
                   alt={val.name}
                   className="w-16 h-16 rounded-lg object-cover"

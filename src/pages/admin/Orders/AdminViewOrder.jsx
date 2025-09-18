@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Navbar from "../../../layouts/admin/Navbar";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const AdminViewOrder = () => {
   const { id } = useParams();
   const [order, setOrder] = useState(null);
@@ -11,7 +11,7 @@ const AdminViewOrder = () => {
   // Fetch order by ID
   const fetchOrder = async () => {
     try {
-      const res = await fetch(`http://168.231.116.183:3000/getOrderById/${id}`);
+      const res = await fetch(`${API_URL}/getOrderById/${id}`);
       const data = await res.json();
       if (res.ok) {
         setOrder(data.order);
@@ -114,7 +114,7 @@ const AdminViewOrder = () => {
                     key={index}
                     className="hover:bg-gray-50 transition-colors"
                   >
-                    <td className="border px-4 py-2"><img className="h-15 w-15 mx-auto" src={`http://168.231.116.183:3000/${item.imageUrl}`} alt="my-img" /></td>
+                    <td className="border px-4 py-2"><img className="h-15 w-15 mx-auto" src={`${API_URL}/${item.imageUrl}`} alt="my-img" /></td>
                     <td className="border px-4 py-2">{item.name}</td>
                     <td className="border px-4 py-2 text-center">
                       {item.quantity}

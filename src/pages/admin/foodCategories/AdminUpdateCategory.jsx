@@ -3,7 +3,7 @@ import Navbar from "../../../layouts/admin/Navbar";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { toast } from "react-toastify";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const AdminUpdateCategory = () => {
     const params=useParams();
     const navigate=useNavigate();
@@ -20,7 +20,7 @@ const AdminUpdateCategory = () => {
     //************************************************** */
     const getCategoryById=async()=>{
           try{
-            const response=await fetch(`http://168.231.116.183:3000/getcategorybyid/${params.id}`,{
+            const response=await fetch(`${API_URL}/getcategorybyid/${params.id}`,{
                 method:"GET",
                 headers:{
                     'Content-Type':'application/json',
@@ -44,7 +44,7 @@ const AdminUpdateCategory = () => {
     const handleSubmit=async(e)=>{
         e.preventDefault();
         try{
-            const response=await fetch(`http://168.231.116.183:3000/updatecategory/${params.id}`,{
+            const response=await fetch(`${API_URL}/updatecategory/${params.id}`,{
                 method:"PUT",
                 headers:{
                     'Content-Type':'application/json',

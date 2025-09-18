@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const Charity = () => {
     const [form, setForm] = useState({
     name: "",
@@ -50,7 +50,7 @@ const Charity = () => {
       payload.append("amountRequested", form.amountRequested || "");
       if (form.file) payload.append("file", form.file);
 
-      const res = await fetch("http://168.231.116.183:3000/charityrequest", {
+      const res = await fetch(`${API_URL}/charityrequest`, {
         method: "POST",
         body: payload,
       });

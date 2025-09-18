@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { toast } from "react-toastify";
 import Select from "react-select";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const AdminUpdateFoodItem = () => {
   const params = useParams();
   const navigate = useNavigate();
@@ -44,7 +44,7 @@ const AdminUpdateFoodItem = () => {
   //************************************************ */
   const getallCategories = async () => {
     try {
-      const response = await fetch("http://168.231.116.183:3000/getallcategory", {
+      const response = await fetch(`${API_URL}/getallcategory`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -63,7 +63,7 @@ const AdminUpdateFoodItem = () => {
   const getFoodItemById = async () => {
     try {
       const response = await fetch(
-        `http://168.231.116.183:3000/getfooditembyid/${params.id}`,
+        `${API_URL}/getfooditembyid/${params.id}`,
         {
           method: "GET",
           headers: {
@@ -104,7 +104,7 @@ const AdminUpdateFoodItem = () => {
       }
     }
     try {
-      const response = await fetch(`http://168.231.116.183:3000/updatefooditem/${params.id}`, {
+      const response = await fetch(`${API_URL}/updatefooditem/${params.id}`, {
         method: "PUT",
         body: payload,
       });
@@ -121,7 +121,7 @@ const AdminUpdateFoodItem = () => {
   };
     // ✅ Fetch food items for suggestions dropdown
     useEffect(() => {
-      fetch("http://168.231.116.183:3000/getallfoodItems")
+      fetch(`${API_URL}/getallfoodItems`)
         .then((res) => res.json())
         .then((data) => {
           setAllFoods(
@@ -229,7 +229,7 @@ const AdminUpdateFoodItem = () => {
             </label>
             {formData.imageUrl && (
               <img
-                src={`http://168.231.116.183:3000/${formData.imageUrl}`}
+                src={`${API_URL}/${formData.imageUrl}`}
                 alt="Current"
                 className="w-32 h-32 object-cover mb-2 rounded"
               />

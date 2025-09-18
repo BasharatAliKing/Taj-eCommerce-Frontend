@@ -2,6 +2,7 @@ import React, { useState ,useContext} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import UserContext from "../useContext/UserContext";
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const Signup = () => {
      const {storetokeninLS} = useContext(UserContext)
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://168.231.116.183:3000/signup`, {
+      const response = await fetch(`${API_URL}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

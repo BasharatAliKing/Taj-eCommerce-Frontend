@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const OurMenu = () => {
     const [ourmenu,setOurMenu]=useState([]);
      const fetchRandomFoods = async () => {
     try {
       // backend endpoint that returns random items
-      const response = await fetch("http://168.231.116.183:3000/foods-items-random",{
+      const response = await fetch(`${API_URL}/foods-items-random`,{
         method:"GET",
         headers:{
              "Content-Type": "application/json",
@@ -42,7 +42,7 @@ const OurMenu = () => {
             className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col items-center"
           >
             <img
-              src={`http://168.231.116.183:3000/${product.imageUrl}`}
+              src={`${API_URL}/${product.imageUrl}`}
               alt={product.name}
               className="w-full h-64 object-cover"
             />

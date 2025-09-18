@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../../../layouts/admin/Navbar";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const AdminFoodCategories = () => {
   const [item, setItem] = useState([]);
  //*********************************************** */
@@ -11,7 +11,7 @@ const AdminFoodCategories = () => {
  //************************************************ */
   const getallfoodItems = async () => {
     try {
-      const response = await fetch("http://168.231.116.183:3000/getallcategory", {
+      const response = await fetch(`${API_URL}/getallcategory`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const AdminFoodCategories = () => {
     );
      if (!confirmDelete) return;
     try{
-      const response=await fetch(`http://168.231.116.183:3000/deletecategory/${id}`,{
+      const response=await fetch(`${API_URL}/deletecategory/${id}`,{
         method:"DELETE",
         headers:{
           "Content-Type":"application/json"

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../../../layouts/admin/Navbar";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const AdminGallery = () => {
   const [item, setItem] = useState([]);
   //*********************************************** */
@@ -15,7 +15,7 @@ const AdminGallery = () => {
     if (!confirmDelete) return;
     try {
       const response = await fetch(
-        `http://168.231.116.183:3000/deleteGalleryImage/${id}`,
+        `${API_URL}/deleteGalleryImage/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -37,7 +37,7 @@ const AdminGallery = () => {
   //************************************************ */
   const getallgalleryImages = async () => {
     try {
-      const response = await fetch("http://168.231.116.183:3000/getGalleryImages", {
+      const response = await fetch(`${API_URL}/getGalleryImages`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -90,7 +90,7 @@ const AdminGallery = () => {
                 <td className="px-6 py-4 whitespace-nowrap">
                   <img
                     className="h-10 w-10"
-                    src={`http://168.231.116.183:3000/${val.image}`}
+                    src={`${API_URL}/${val.image}`}
                     alt=""
                   />
                 </td>

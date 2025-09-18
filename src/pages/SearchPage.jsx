@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import UserContext from "../useContext/UserContext";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const SearchPage = () => {
   const params = useParams();
   const navigate=useNavigate();
@@ -11,7 +11,7 @@ const SearchPage = () => {
 
   const getallfoodItems = async () => {
     try {
-      const response = await fetch("http://168.231.116.183:3000/getallfoodItems", {
+      const response = await fetch(`${API_URL}/getallfoodItems`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -26,7 +26,7 @@ const SearchPage = () => {
   };
   const getAllCategory = async () => {
     try {
-      const response = await fetch("http://168.231.116.183:3000/getallcategory", {
+      const response = await fetch(`${API_URL}/getallcategory`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +75,7 @@ const SearchPage = () => {
             className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col items-center"
           >
             <img
-              src={`http://168.231.116.183:3000/${product.imageUrl}`}
+              src={`${API_URL}/${product.imageUrl}`}
               alt={product.name}
               className="w-full h-64 object-cover"
             />

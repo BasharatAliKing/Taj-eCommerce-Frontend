@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../../../layouts/admin/Navbar";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const AdminFoodItems = () => {
   const [item, setItem] = useState([]);
   //*********************************************** */
@@ -15,7 +15,7 @@ const AdminFoodItems = () => {
     if (!confirmDelete) return;
     try {
       const response = await fetch(
-        `http://168.231.116.183:3000/deletefooditem/${id}`,
+        `${API_URL}/deletefooditem/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -37,7 +37,7 @@ const AdminFoodItems = () => {
   //************************************************ */
   const getallfoodItems = async () => {
     try {
-      const response = await fetch("http://168.231.116.183:3000/getallfoodItems", {
+      const response = await fetch(`${API_URL}/getallfoodItems`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -94,7 +94,7 @@ const AdminFoodItems = () => {
                 <td className="px-6 py-4 whitespace-nowrap">
                   <img
                     className="h-10 w-10"
-                    src={`http://168.231.116.183:3000/${val.imageUrl}`}
+                    src={`${API_URL}/${val.imageUrl}`}
                     alt=""
                   />
                 </td>

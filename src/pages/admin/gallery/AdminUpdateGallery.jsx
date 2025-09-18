@@ -3,7 +3,7 @@ import Navbar from "../../../layouts/admin/Navbar";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { toast } from "react-toastify";
-
+const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const AdminUpdateGallery = () => {
   const navigate = useNavigate();
   const params = useParams(); // get id from route
@@ -17,12 +17,12 @@ const AdminUpdateGallery = () => {
   useEffect(() => {
     const fetchGalleryItem = async () => {
       try {
-        const res = await fetch(`http://168.231.116.183:3000/getgalleryimagebyid/${params.id}`);
+        const res = await fetch(`${API_URL}/getgalleryimagebyid/${params.id}`);
         if (!res.ok) throw new Error("Failed to fetch gallery item");
         const data = await res.json();
         console.log(data);
         setFormData({ name: data.name, image: "" });
-        setPreview(`http://168.231.116.183:3000${data.image}`); // show existing image
+        setPreview(`${API_URL}/${data.image}`); // show existing image
       } catch (err) {
         console.log(err);
         toast.error("Error fetching image details");
@@ -52,7 +52,7 @@ const AdminUpdateGallery = () => {
        }
      }
      try {
-       const response = await fetch(`http://168.231.116.183:3000/updateGalleryImage/${params.id}`, {
+       const response = await fetch(`${API_URL}/updateGalleryImage/${params.id}`, {
          method: "PUT",
          body: payload,
        });
