@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const {cart,total,setSearchItem}=useContext(UserContext);
   return (
-    <header className="bg-charkol p-3 py-0 md:py-3 text-white">
-      <div className="container mx-auto flex flex-wrap gap-3 items-center justify-between px-6 py-2 md:py-4">
+    <header className="bg-charkol sticky p-3 py-0  text-white">
+      <div className="md:container flex flex-wrap gap-3 items-center justify-between md:px-6 py-2">
         {/* Logo */}
         <Link to='/' className="flex items-center space-x-2">
           <img src="/logo.png" alt="my-img " className=" h-15 md:h-20 rounded-full" />
