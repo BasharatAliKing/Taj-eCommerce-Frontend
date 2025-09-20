@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { BrowserRouter as Router ,Routes, Route } from "react-router-dom";
-
 import Home from "./pages/Home";
 import "./App.css"
 import CheckoutPage from "./pages/CheckOut";
@@ -35,8 +34,18 @@ import Charity from "./pages/Charity";
 import WhereToFindUs from "./pages/WhereToFindUs";
 import AllergenInfo from "./pages/AllergenInfo";
 import AdminViewOrder from "./pages/admin/Orders/AdminViewOrder";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const App = () => {
    const {user}=useContext(UserContext);
+     useEffect(() => {
+    AOS.init({
+      duration: 800, // animation duration
+      once: false,   // animate every time it scrolls into view
+      mirror: true,  // animate out while scrolling past
+    });
+  }, []);
   return (
     <>
      <Router>

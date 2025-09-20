@@ -17,20 +17,21 @@ const Home = () => {
       {/* welcome here */}
       <Welcome/>
       {/* food to make */}
-      <section className="relative h-[60vh] lg:h-[120vh] bg-cover bg-center bg-[url(/bbq.webp)]">
+      <section  className="relative h-[60vh] lg:h-[120vh] bg-cover bg-center bg-[url(/bbq.webp)]">
         {/* <img
           src="/hungry-lets-fix.png"
           className="absolute -top-15 md:-top-25 right-5 md:right-0 md:left-20 z-10 w-[30%] md:w-[15%]"
           alt="my-img"
         /> */}
         <img
+        data-aos="flip-right"
           src="/stars.svg"
           className="absolute -top-5 right-20 z-10"
           width="6%"
           alt=""
         />
-        <div className="absolute inset-0 bg-[#221b4b7a] bg-opacity-40 flex flex-col justify-center items-center text-center text-white px-6">
-          <img src="/food-to-make-you-feel.png" alt="" />
+        <div  className="absolute inset-0 bg-[#221b4b7a] bg-opacity-40 flex flex-col justify-center items-center text-center text-white px-6">
+          <img data-aos="fade-up" src="/food-to-make-you-feel.png" alt="" />
           <img
             src="/yum-yum.png"
             width="20%"
@@ -41,8 +42,8 @@ const Home = () => {
       </section>
       {/* food-Menus */}
       <div id="food-menu" className="relative py-16 bg-[#4A4A4A]">
-        <img src="/100-halal.png" className="absolute -top-10 right-10 md:right-25 w-[30%] md:w-[15%]"  alt="" />
-        <div className="container w-full flex flex-col gap-10">
+        <img data-aos="flip-right" src="/100-halal.png" className="absolute -top-10 right-10 md:right-25 w-[30%] md:w-[15%]"  alt="" />
+        <div  data-aos="fade-up-right" className="container w-full flex flex-col gap-10">
           <img src="/our-food-menus--large.png" className="md:w-[50%]" alt="" />
           <p className="md:w-[50%] text-base text-white font-semibold">
             If variety is the spice of life…we’re pretty hot! At K2 Taj you’ll
@@ -60,24 +61,26 @@ const Home = () => {
           </div>
         </div>
            <div className="md:absolute flex flex-col mt-10 md:mt-auto gap-5 right-20 w-[300px] mx-auto top-70  z-20">
-          <img src="/sparklewowed.png" className="" alt="" />
-          <img src="/burger-outline--large.png" className="" alt="" />
-          <img src="/homemade.png" className="" alt="" />
+          <img data-aos="flip-right" src="/sparklewowed.png" className="" alt="" />
+          <img data-aos="flip-right" src="/burger-outline--large.png" className="" alt="" />
+          <img data-aos="flip-right" src="/homemade.png" className="" alt="" />
         </div>
       </div>
       {/* repeating background */}
-      <div className="relative py-16 bg-cover bg-center bg-[url(/repeating-background.png)]">
+      <div  className="relative py-16 bg-cover bg-center bg-[url(/repeating-background.png)]">
         <div className="container">
-          <img src="/100-superlicious.png" alt="" />
+          <img data-aos="zoom-in-up" src="/100-superlicious.png" alt="" />
         </div>
       </div>
       <div className="flex absolute w-full">
         <img
+         data-aos="flip-right"
           src="/stars.svg"
           className="absolute -top-10 md:-top-18 right-10 md:right-20  z-20 w-[15%] md:w-[6%]"
           alt="my-img"
         />
        <img
+        data-aos="flip-right"
           src="/stars.svg"
           className="absolute left-10  md:left-20 top-10  z-20 w-[15%] md:w-[6%]"
           alt="my-img"
@@ -86,7 +89,7 @@ const Home = () => {
       </div>
       {/* my lahore rewards */}
      {/* <Rewards/> */}
-      <div className="hidden md:flex flex-col">
+      <div className="flex flex-col">
          <OurVenues />
       </div>
        {/* yellow line image */}

@@ -24,9 +24,9 @@ const OurVenues = () => {
    
   return (
    <div id='where-to-find-us' className="relative bg-cover bg-center bg-[url(/wheretofindus.jpg)]">
-      <div className="flex flex-col gap-20 bg-[#221b4b80]  py-30">
-         <img src="/our-venues-far-and-wide.png" className='mx-auto mt-10 w-[30%]' alt="" />
-    <div className=" max-w-[800px] mx-auto">
+      <div className="flex flex-col gap-20 bg-[#221b4b80] py-10  md:py-30">
+         <img  data-aos="flip-up" src="/our-venues-far-and-wide.png" className='mx-auto mt-10 w-[70%] md:w-[30%]' alt="" />
+    <div data-aos="zoom-in-up" className="hidden md:flex max-w-[800px] mx-auto">
       
       {
         venues.map((val,index)=>(
@@ -126,6 +126,49 @@ const OurVenues = () => {
       </div>
         ))
       }
+    </div>
+    {/* for small screen */}
+      <div className="flex md:hidden justify-center items-center min-h-screen bg-gray-900 p-4">
+      <div className="bg-gray-800 text-white rounded-xl border-8 border-dotted border-gray-600 max-w-3xl w-full relative">
+        {/* Top Logo */}
+        <div className="absolute -top-15 left-1/2 transform -translate-x-1/2 bg-gray-800 rounded-full p-4 border-8 border-dotted border-gray-600">
+        <img className='w-[70%] mx-auto' src="/venue-icon--Flag.png" alt="" />
+        </div>
+
+        {/* Content */}
+        <div className="flex flex-col items-center text-center pt-20 pb-10 px-6">
+          {/* Title */}
+          <h1 className="text-4xl font-bold font-serif">K2 Taj</h1>
+          <p className="text-yellow-400 text-lg mt-2 font-semibold">
+            OUR FIRST VENUE!
+          </p>
+
+          {/* Info Section */}
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+            {/* Opening Times */}
+            <div className="text-center md:text-left">
+              <h2 className="text-yellow-400 font-bold uppercase mb-3">
+                Opening Times
+              </h2>
+              <p>Monday – Thursday : 12pm - 11pm</p>
+              <p>Friday : 12pm - 12am</p>
+              <p>Saturday : 1pm - 1am</p>
+              <p>Sunday : 1pm - 1am</p>
+            </div>
+
+            {/* Contact Details */}
+            <div className="text-center md:text-right">
+              <h2 className="text-yellow-400 font-bold uppercase mb-3">
+                Contact Details
+              </h2>
+              <p>51-53 Plane Street BlackBurn</p>
+              <p>BB1 6LR</p>
+              <p>07404 888956</p>
+              <p>01254 675899</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
       </div>
     </div>
