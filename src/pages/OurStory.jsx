@@ -32,10 +32,10 @@ export default function OurStoryCharity() {
               From humble beginnings to serving the flavors you love — our journey is
               made of family recipes, hard work and the community that raised us.
             </p>
-            <div className="mt-8 inline-flex gap-3">
+            <div className="mt-8 flex flex-wrap items-center justify-center mx-auto w-full gap-3">
               <a
                 href="#charity"
-                className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:opacity-90 transition"
+                className="bg-yellow-400 text-black px-[34px] md:px-6 py-3 rounded-full font-semibold hover:opacity-90 transition"
               >
                 Charity Request
               </a>
