@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const Hero = () => {
+  const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
       const [category,setCategory]=useState([]);
 
       const getAllCategory=async()=>{
         try {
-            const response=await fetch("http://168.231.116.183:3000/getallcategory",{
+            const response=await fetch(`${API_URL}/getallcategory`,{
                 method:"GET",
                 headers:{
                     "Content-Type":"application/json"

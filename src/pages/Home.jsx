@@ -8,6 +8,7 @@ import Menu from "../components/Menu";
 import { Link } from "react-router-dom";
 const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const Home = () => {
+  
   return (
     <>
       <Navbar />
