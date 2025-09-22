@@ -128,7 +128,7 @@ const OurVenues = () => {
       }
     </div>
     {/* for small screen */}
-      <div className="flex md:hidden justify-center items-center min-h-screen bg-gray-900 p-4">
+      <div className="flex md:hidden justify-center items-center min-h-screen bg-gray-900 m-4">
       <div className="bg-gray-800 text-white rounded-xl border-8 border-dotted border-gray-600 max-w-3xl w-full relative">
         {/* Top Logo */}
         <div className="absolute -top-15 left-1/2 transform -translate-x-1/2 bg-gray-800 rounded-full p-4 border-8 border-dotted border-gray-600">
