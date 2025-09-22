@@ -101,26 +101,26 @@ const Header = () => {
             type="text"
             onChange={(e) => setSearchItem(e.target.value)}
             placeholder="Search Product..."
-            className="flex p-1 text-sm border rounded-full px-5  ring ring-charkol outline-none"
+            className="flex p-2 text-sm border rounded-full px-5  ring ring-charkol outline-none"
           />
         </div>
       </div>
 
       {menu ? (
-        <nav className=" bg-yellow py-2">
-          <div className="container flex flex-col md:flex-row text-center justify-around text-charkol md:flex items-center font-medium text-base">
-            <Link to="/our-menu">Our Menu</Link>
+        <nav className=" bg-yellow py-2 mt-[2px]">
+          <div className="container flex flex-col gap-5 md:flex-row text-center justify-around text-charkol md:flex items-center font-medium text-base">
+            <Link   onClick={()=>{setMenu(false)}} to="/our-menu">Our Menu</Link>
             {category.map((val, index) => (
               <Link
                 key={index}
+                onClick={()=>{setMenu(false)}}
                 to={`/product/${val.categoryname}`}
                 className=" capitalize"
               >
                 {val.categoryname}
               </Link>
             ))}
-            <li></li>
-            <button className="bg-charkol text-yellow p-2 py-1 duration-500 cursor-pointer hover:scale-95 rounded-md">
+           <button className="bg-charkol text-yellow p-2 py-1 duration-500 cursor-pointer hover:scale-95 rounded-md">
               {user.role === "admin" ? (
                 <Link to="/admin">Dashboard</Link>
               ) : user.role === "user" ? (
