@@ -1,16 +1,8 @@
 import {
-  BarChart2,
-  Bookmark,
-  CalendarFold,
   ChevronDown,
   ChevronUp,
-  DollarSign,
   Menu,
-  Settings,
-  ShoppingBag,
-  ShoppingCart,
-  TrendingUp,
-  Users,
+  Grid, Utensils, Image, ShoppingCart
 } from "lucide-react";
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -18,25 +10,25 @@ import { Link } from "react-router-dom";
 const SIDEBAR_ITEMS = [
   {
     name: "Food Categories",
-    icon: BarChart2,
+    icon: Grid,
     color: "#6366f1",
     href: "/admin/categories",
   },
   {
     name: "Food Items",
-    icon: BarChart2,
+    icon: Utensils,
     color: "#6366f1",
     href: "/admin/foodItems",
   },
   {
     name: "Gallery",
-    icon: BarChart2,
+    icon: Image,
     color: "#6366f1",
     href: "/admin/gallery",
   },
   {
     name: "Orders",
-    icon: BarChart2,
+    icon: ShoppingCart,
     color: "#6366f1",
     href: "/admin/orders",
   },

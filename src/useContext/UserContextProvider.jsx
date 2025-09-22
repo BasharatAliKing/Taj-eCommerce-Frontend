@@ -70,13 +70,11 @@ const UserContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const authorizationtoken = `Bearer ${token}`;
-
   // Store token
   const storetokeninLS = (servertoken) => {
     setToken(servertoken);
     localStorage.setItem("token", servertoken);
   };
-
   // Logout
   const LogoutUser = () => {
     setToken("");

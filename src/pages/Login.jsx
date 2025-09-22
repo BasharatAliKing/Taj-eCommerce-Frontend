@@ -29,13 +29,12 @@ const Login = () => {
         body: JSON.stringify(loginform),
       });
       const res_data = await response.json();
-      console.log(res_data.role);
       if (response.ok) {
         toast.success("User Log In Successfully");
         setLoginForm({ email: "", password: "" });
-        navigate("/home");
+        navigate("/our-menu");
         storetokeninLS(res_data.token);
-        setRole(res_data.role);
+       // setRole(res_data.role);
       } else {
         toast.error("Invalid Credentials");
       }

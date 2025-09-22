@@ -36,6 +36,7 @@ import AllergenInfo from "./pages/AllergenInfo";
 import AdminViewOrder from "./pages/admin/Orders/AdminViewOrder";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Logout from "./pages/Logout";
 
 const App = () => {
    const {user}=useContext(UserContext);
@@ -54,6 +55,7 @@ const App = () => {
         <Route>
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<Signup/>} />
+            <Route path="/logout" element={<Logout />} />
            <Route path="/" element={<Home/>} />
            <Route path="/home" element={<Home/>} />
            {/* second web */}
