@@ -121,12 +121,12 @@ const Header = () => {
             ))}
             <li></li>
             <button className="bg-charkol text-yellow p-2 py-1 duration-500 cursor-pointer hover:scale-95 rounded-md">
-              {user.length === 0 ? (
-                <Link to="/login">LogIn</Link>
-              ) : user.role === "admin" ? (
+              {user.role === "admin" ? (
                 <Link to="/admin">Dashboard</Link>
-              ) : (
+              ) : user.role === "user" ? (
                 <Link to="/logout">Logout</Link>
+              ) : (
+                <Link to="/login">LogIn</Link>
               )}
             </button>
           </div>
