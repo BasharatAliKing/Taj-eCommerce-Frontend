@@ -29,7 +29,7 @@ const Home = () => {
           className="absolute -top-5 right-10 md:right-20 z-10 w-[20%] md:w-[6%]"
           alt="my-img"
         />
-        <div  className="absolute inset-0 bg-[#221b4b7a] bg-opacity-40 flex flex-col justify-center items-center text-center text-white px-6">
+        <div className="absolute inset-0 bg-[#221b4b7a] bg-opacity-40 flex flex-col justify-center items-center text-center text-white px-6">
           <img data-aos="fade-up" src="/food-to-make-you-feel.png" alt="" />
           <img
             src="/yum-yum.png"
