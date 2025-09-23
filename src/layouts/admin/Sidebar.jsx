@@ -9,6 +9,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 const SIDEBAR_ITEMS = [
   {
+    name: "Dashbaord",
+    icon: Grid,
+    color: "#6366f1",
+    href: "/admin",
+  },
+  {
     name: "Food Categories",
     icon: Grid,
     color: "#6366f1",
