@@ -18,7 +18,6 @@ const AdminAddFoodItem = () => {
     available: true,
     suggestions: [],
   });
-
   // handle input changes
   const handleChange = (e) => {
     const { name, value, type, files, checked } = e.target;
@@ -30,7 +29,6 @@ const AdminAddFoodItem = () => {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
-
   // ✅ Handle suggestion change (multi-select IDs only)
   const handleSuggestionChange = (selected) => {
     const cleanSuggestions = (selected || [])
@@ -41,7 +39,6 @@ const AdminAddFoodItem = () => {
       suggestions: cleanSuggestions,
     }));
   };
-
   // ✅ Get categories
   const getallCategories = async () => {
     try {
@@ -71,6 +68,12 @@ const AdminAddFoodItem = () => {
       method: "POST",
       body: payload,
     });
+    if(formData.name===''){
+     return toast.error("Item Name is Required !");
+    }
+    else if(formData.imageUrl===''){
+     return toast.error("Image is Required !");
+    }
     const res_data = await response.json();
     if (response.ok) {
       toast.success("Food Item Added Successfully.");
@@ -82,7 +85,19 @@ const AdminAddFoodItem = () => {
     console.log(err);
   }
 };
-
+ // ✅ Fetch food items for suggestions dropdown
+    useEffect(() => {
+      fetch(`${API_URL}/getallfoodItems`)
+        .then((res) => res.json())
+        .then((data) => {
+          setAllFoods(
+            (data.message || []).map((food) => ({
+              value: food._id,
+              label: food.name,
+            }))
+          );
+        });
+    }, []);
   useEffect(() => {
     getallCategories();
   }, []);
