@@ -6,7 +6,7 @@ const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const ProductDetails = () => {
   const params = useParams();
   const { setCart } = useContext(UserContext);
-
+  const [loading, setLoading] = useState(true); // ✅ Add loading state
   const [item, setItem] = useState(null);
   const [allItems, setAllItems] = useState([]); // ✅ store all food items
   const [quantity, setQuantity] = useState(1);
@@ -27,6 +27,8 @@ const ProductDetails = () => {
       setItem(json.foodItem);
     } catch (error) {
       console.log(error);
+    }finally {
+      setLoading(false); // ✅ Stop loading after API call finishes
     }
   };
 
@@ -43,7 +45,6 @@ const ProductDetails = () => {
       console.log(error);
     }
   };
-
   // ✅ Add main item to cart
   const handleAddtoCart = (e) => {
     e.preventDefault();
@@ -120,12 +121,23 @@ const ProductDetails = () => {
 const suggestedItems = allItems.filter((food) =>
   item.suggestions.includes(food._id)
 );
-
+ if (loading) {
+    // ✅ Loading screen
+    return (
+      <div className="flex items-center justify-center h-screen bg-white">
+        <img
+          src="/logo.png"  // 👉 put your logo path here (public folder in Vite)
+          alt="Loading..."
+          className="w-24 h-24 animate-spin"
+        />
+      </div>
+    );
+  }
   return (
     <div className="font-sans py-16 pt-5">
       {/* Breadcrumb */}
       <div className="px-8 py-10 text-xl font-medium text-gray-600 capitalize">
-        Home / {item.category} / <span className="font-semibold">{item.name}</span>
+        <Link to="/our-menu">Home</Link> / <Link to={`/product/${item.category}`}>{item.category}</Link> / <span className="font-semibold">{item.name}</span>
       </div>
 
       {/* Main Content */}

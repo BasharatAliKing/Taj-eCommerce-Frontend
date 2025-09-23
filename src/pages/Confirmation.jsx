@@ -21,7 +21,7 @@ const OrderConfirmation = () => {
         for the order confirmation details.”
       </p>
       <Link
-        to="/"
+        to="/our-menu"
         className="px-4 font-medium font-sketch py-2 mx-auto bg-yellow text-black rounded-lg"
       >
         Back to Store

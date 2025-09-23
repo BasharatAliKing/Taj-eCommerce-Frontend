@@ -5,7 +5,7 @@ const Product = () => {
   const params = useParams();
   const [item, setItem] = useState([]);
   const [categories, setCategories] = useState([]);
-
+ const [loading, setLoading] = useState(true); // ✅ Add loading state
   const getallfoodItems = async () => {
     try {
       const response = await fetch(`${API_URL}/getallfoodItems`, {
@@ -19,6 +19,8 @@ const Product = () => {
       setItem(json.message);
     } catch (error) {
       console.log(error);
+    }finally {
+      setLoading(false); // ✅ Stop loading after API call finishes
     }
   };
   const getAllCategory = async () => {
@@ -55,6 +57,18 @@ const Product = () => {
     getallfoodItems();
     getAllCategory();
   }, []);
+   if (loading) {
+    // ✅ Loading screen
+    return (
+      <div className="flex items-center justify-center h-screen bg-white">
+        <img
+          src="/logo.png"  // 👉 put your logo path here (public folder in Vite)
+          alt="Loading..."
+          className="w-24 h-24 animate-spin"
+        />
+      </div>
+    );
+  }
   return (
     <div className="bg-[#fdfdfb] flex flex-col gap-5 py-10">
       {/* Header Section */}

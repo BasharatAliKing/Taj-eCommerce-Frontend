@@ -8,7 +8,6 @@ const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const CheckoutPage = () => {
   const navigate = useNavigate();
   const { cart, total, setCart } = useContext(UserContext);
-
   const [loading, setLoading] = useState(false); // 👈 loading state
   const [formData, setFormData] = useState({
     email: "",
@@ -59,8 +58,28 @@ const CheckoutPage = () => {
       } catch (jsonErr) {
         console.error("Invalid JSON response:", jsonErr);
       }
-
-      if (response.ok) {
+      if(formData.email===''){
+        toast.error("Email Address is Required!")
+      }
+      else if(formData.firstName===''){
+        toast.error("First Name is Required!")
+      }
+      else if(formData.lastName===''){
+        toast.error("Last Name is Required!")
+      }
+      else if(formData.address===''){
+        toast.error("Address is Required!")
+      }
+      else if(formData.city===''){
+        toast.error("City Name is Required!")
+      }
+      else if(formData.postcode===''){
+        toast.error("Postel Code is Required!")
+      }
+      else if(formData.phone===''){
+        toast.error("Phone Number is Required!")
+      }
+      else if (response.ok) {
         localStorage.setItem("cart", JSON.stringify([]));
         setCart([]);
 
@@ -98,7 +117,6 @@ const CheckoutPage = () => {
               required
             />
           </div>
-
           {/* Delivery */}
           <div>
             <h2 className="font-semibold text-lg mb-2">Delivery</h2>
@@ -140,7 +158,7 @@ const CheckoutPage = () => {
               <input
                 type="text"
                 name="postcode"
-                placeholder="Postcode"
+                placeholder="Postelcode"
                 className="border rounded-lg p-3"
                 value={formData.postcode}
                 onChange={handleChange}

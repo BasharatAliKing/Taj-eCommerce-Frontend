@@ -27,7 +27,7 @@ const Hero = () => {
       <h1 data-aos="fade-down" className="text-3xl sm:text-5xl md:text-6xl leading-tight font-bold text-yellow pb-10 uppercase">Where Blackburn <br /> <span className="underline">Eats Authentic</span></h1>
        <div className="flex flex-wrap gap-4">
           <a href="/our-menu" data-aos="zoom-in" className="flex w-full cursor-pointer md:w-[150px] hover:animate-scl h-[100px]  md:h-[150px] items-center justify-center text-base  md:text-lg font-dancing font-bold bg-cover bg-no-repeat border-[3px] border-yellow rounded-md p-2    bg-[url(/button-pattern-orange.png)]">OUR MENUS</a>
-          <Link to="/desserts" data-aos="zoom-in" className="flex w-full cursor-pointer md:w-[150px] hover:animate-scl h-[100px]  md:h-[150px] items-center justify-center text-base  md:text-lg font-dancing font-bold bg-cover bg-no-repeat border-[3px] border-yellow rounded-md p-2    bg-[url(/button-pattern-pink.png)]">DESSERTS</Link>
+          <Link to="/product/desserts" data-aos="zoom-in" className="flex w-full cursor-pointer md:w-[150px] hover:animate-scl h-[100px]  md:h-[150px] items-center justify-center text-base  md:text-lg font-dancing font-bold bg-cover bg-no-repeat border-[3px] border-yellow rounded-md p-2    bg-[url(/button-pattern-pink.png)]">DESSERTS</Link>
           <Link to="/our-menu" data-aos="zoom-in" className="flex w-full cursor-pointer md:w-[150px] hover:animate-scl h-[100px]  md:h-[150px] items-center justify-center text-base  md:text-lg font-dancing font-bold bg-cover bg-no-repeat border-[3px] border-yellow rounded-md p-2  b  bg-[url(/button-pattern-green.png)]">DEALS</Link>
          {/* {
             category.map((cat,index)=>(
