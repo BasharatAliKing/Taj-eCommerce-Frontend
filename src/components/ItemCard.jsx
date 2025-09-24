@@ -2,7 +2,7 @@ import React from "react";
 const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 const ItemCard = ({ name, price, image }) => {
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center p-4">
+    <div className="bg-white relative rounded-xl shadow-md overflow-hidden flex flex-col items-center p-4">
       <img
         src={`${API_URL}/${image}`}
         alt={name}

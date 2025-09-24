@@ -63,7 +63,7 @@ const Header = () => {
       </header>
       <nav className=" bg-yellow hidden md:flex py-2">
         <div className="container py-4">
-          <ul className=" justify-around text-charkol md:flex items-center font-semibold text-base lg:text-lg">
+          <ul className=" justify-around text-charkol md:flex flex-wrap items-center font-semibold text-base lg:text-lg">
             <Link to="/our-menu">Our Menu</Link>
             {category.map((val, index) => (
               <Link

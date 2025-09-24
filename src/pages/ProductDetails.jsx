@@ -143,14 +143,14 @@ const suggestedItems = allItems.filter((food) =>
       {/* Main Content */}
       <div className="grid md:grid-cols-2 gap-8 px-8">
         {/* Product Image */}
-        <div>
+        <div className="relative">
+         {item.size ?    <p className="absolute top-5 right-5 z-50 bg-yellow px-3 py-2 rounded-md text-charkol font-semibold">{item.size}</p>:null}
           <img
             src={`${API_URL}/${item.imageUrl}`}
             alt={item.name}
             className="rounded-lg shadow-md w-full max-h-[400px] object-cover"
           />
         </div>
-
         {/* Product Info */}
         <div className="flex flex-col gap-6 my-auto">
           <h2 className="text-3xl font-bold">{item.name}</h2>

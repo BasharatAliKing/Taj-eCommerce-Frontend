@@ -13,6 +13,7 @@ const AdminAddFoodItem = () => {
     name: "",
     category: "",
     price: "",
+    size:"",
     description: "",
     imageUrl: "",
     available: true,
@@ -103,13 +104,13 @@ const AdminAddFoodItem = () => {
   }, []);
   return (
     <div className="flex-1 overflow-auto relative z-10">
-      <Navbar title="Green CEO " />
-      <div className="p-5 flex flex-col gap-5">
+      <Navbar/>
+       <div className="p-5 flex flex-col gap-5">
         <form
           onSubmit={handleSubmit}
-          className="md:w-1/2 bg-gray-700 p-5 rounded-md flex flex-col gap-3"
+          className=" bg-gray-700 p-5 relative rounded-md grid grid-cols-2 gap-y-3 gap-x-5"
         >
-          <Link to="/admin/fooditems" className="ml-auto text-2xl">
+          <Link to="/admin/fooditems" className="right-3 top-3 absolute text-2xl">
             <IoMdCloseCircleOutline />
           </Link>
 
@@ -161,19 +162,21 @@ const AdminAddFoodItem = () => {
               className="bg-gray p-2 text-black outline-none rounded-md"
             />
           </div>
-
-          {/* Description */}
+          {/* Price */}
           <div className="flex flex-col gap-1">
             <label className="text-md lg:text-lg font-sketch font-medium">
-              Description
+              Size
             </label>
-            <textarea
-              name="description"
-              value={formData.description}
+            <input
+              type="text"
+              name="size"
+              value={formData.size}
               onChange={handleChange}
               className="bg-gray p-2 text-black outline-none rounded-md"
-            ></textarea>
+            />
           </div>
+
+         
 
           {/* Image */}
           <div className="flex flex-col gap-1">
@@ -191,7 +194,7 @@ const AdminAddFoodItem = () => {
           {/* Suggestions */}
           <div className="flex flex-col gap-1">
             <label className="text-md lg:text-lg font-sketch font-medium">
-              Suggestion Items
+              Extras
             </label>
             <Select
               isMulti
@@ -200,10 +203,21 @@ const AdminAddFoodItem = () => {
               className="text-black"
             />
           </div>
-
+ {/* Description */}
+          <div className="flex flex-col gap-1">
+            <label className="text-md lg:text-lg font-sketch font-medium">
+              Description
+            </label>
+            <textarea
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              className="bg-gray p-2 text-black outline-none rounded-md"
+            ></textarea>
+          </div>
           <button
             type="submit"
-            className="bg-yellow duration-700 cursor-pointer p-2 text-md font-sketch text-black rounded-md"
+            className="bg-yellow col-span-2 duration-700 cursor-pointer p-2 text-md font-sketch text-black rounded-md"
           >
             Submit
           </button>

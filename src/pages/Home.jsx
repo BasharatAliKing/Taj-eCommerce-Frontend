@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import Footer from "../layouts/Footer";
 import Navbar from "../layouts/Navbar";
@@ -8,6 +8,24 @@ import Menu from "../components/Menu";
 import { Link } from "react-router-dom";
 const API_URL = import.meta.env.VITE_API_URL; // ✅ Correct way in Vite
 const Home = () => {
+   const [category, setCategory] = useState([]);
+    const getAllCategory = async () => {
+      try {
+        const response = await fetch(`${API_URL}/getallcategory`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const json = await response.json();
+        setCategory(json.categories);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    useEffect(() => {
+      getAllCategory();
+    }, []);
   return (
     <>
       <div className="absolute z-50 top-5 right-5">
@@ -53,11 +71,11 @@ const Home = () => {
         </div>
       </section> */}
       {/* food-Menus */}
-      <div id="food-menu" className="relative py-16 bg-[#4A4A4A]">
+      <div id="food-menu" className="relative py-30 bg-[#4A4A4A]">
         <img
           data-aos="flip-right"
           src="/100-halal.png"
-          className="absolute -top-10 right-10 md:right-25 w-[30%] md:w-[15%]"
+          className="absolute -top-10 right-10 md:right-25 w-[30%] md:w-[10%]"
           alt=""
         />
         <div
@@ -65,19 +83,24 @@ const Home = () => {
           className="container w-full flex flex-col gap-10"
         >
           <img src="/our-food-menus--large.png" className="md:w-[50%]" alt="" />
-          <p className="md:w-[50%] text-base text-white font-semibold">
-            If variety is the spice of life…we’re pretty hot! At K2 Taj you’ll
-            enjoy traditional tastes with a modern twist (and a personal touch)
-            as we get creative with the finest, freshest ingredients. Tuck into
-            our 100% halal choices below:
-          </p>
-          <div className="flex flex-col md:flex-row gap-5 md:w-[50%]">
+         <ul className=" md:w-[50%]  text-charkol md:flex flex-wrap gap-y-5 gap-x-3 items-start font-semibold text-base lg:text-lg">
             <Link
               to="/our-menu"
-              className="bg-[#FFD300] text-center p-2 font-sketch md:p-3 text-black hover:animate-scl font-medium text-base md:text-lg w-full rounded-md"
+              className=" capitalize bg-yellow duration-500 hover:scale-105 px-3 py-2 text-sm font-medium rounded-md text-charkol"
             >
-              MAIN MENU
+              Our Menu
             </Link>
+                   {category.map((val, index) => (
+                      <Link
+                        key={index}
+                        to={`/product/${val.categoryname}`}
+                        className=" capitalize bg-yellow duration-500 hover:scale-105 px-3 py-2 text-sm font-medium rounded-md text-charkol"
+                      >
+                        {val.categoryname}
+                      </Link>
+                    ))}
+                    </ul>
+          <div className="flex flex-col md:flex-row gap-5 md:w-[50%]">
             {/* <button className="bg-[#FFD300] p-3 font-sketch md:p-5 text-white hover:animate-scl font-medium text-base w-full rounded-md">
               CATERING
             </button> */}

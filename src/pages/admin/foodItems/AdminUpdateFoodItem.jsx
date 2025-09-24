@@ -14,6 +14,7 @@ const AdminUpdateFoodItem = () => {
     name: "",
     category: "",
     price: "",
+    size:"",
     description: "",
     imageUrl: "",
     available: "",
@@ -82,6 +83,7 @@ const AdminUpdateFoodItem = () => {
           available: res_data.foodItem.available,
           imageUrl: res_data.foodItem.imageUrl, // ✅ set actual image URL from backend
           suggestions:res_data.foodItem.suggestions,
+          size:res_data.foodItem.size,
         });
       }
     } catch (err) {
@@ -201,6 +203,19 @@ const AdminUpdateFoodItem = () => {
               type="text"
               name="price"
               value={formData.price}
+              onChange={handleChange}
+              className="bg-gray p-2 text-black outline-none rounded-md"
+            />
+          </div>
+            {/* sixe */}
+          <div className="flex flex-col gap-1">
+            <label className="text-md lg:text-lg font-sketch font-medium">
+              Size
+            </label>
+            <input
+              type="text"
+              name="size"
+              value={formData.size}
               onChange={handleChange}
               className="bg-gray p-2 text-black outline-none rounded-md"
             />
