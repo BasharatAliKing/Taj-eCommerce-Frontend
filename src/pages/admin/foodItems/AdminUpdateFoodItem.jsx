@@ -145,9 +145,9 @@ const AdminUpdateFoodItem = () => {
         <form
           onSubmit={handleSubmit}
           action=""
-          className=" md:w-1/2 bg-gray-700 p-5 rounded-md flex flex-col gap-3"
+          className=" bg-gray-700 p-5 relative rounded-md grid grid-cols-2 gap-y-3 gap-x-5"
         >
-          <Link to="/admin/fooditems" className="ml-auto text-2xl">
+          <Link to="/admin/fooditems" className="top-3 right-3 absolute text-2xl">
             <IoMdCloseCircleOutline />
           </Link>
 
@@ -220,21 +220,7 @@ const AdminUpdateFoodItem = () => {
               className="bg-gray p-2 text-black outline-none rounded-md"
             />
           </div>
-          <div className="flex flex-col gap-1">
-            <label
-              htmlFor=""
-              className="text-md lg:text-lg font-sketch font-medium"
-            >
-              Description
-            </label>
-            <textarea
-              type="text"
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              className="bg-gray p-2 text-black outline-none rounded-md"
-            ></textarea>
-          </div>
+        
           <div className="flex flex-col gap-1">
             <label
               htmlFor=""
@@ -266,11 +252,26 @@ const AdminUpdateFoodItem = () => {
               className="text-black"
             />
           </div>
+            <div className="flex flex-col gap-1">
+            <label
+              htmlFor=""
+              className="text-md lg:text-lg font-sketch font-medium"
+            >
+              Description
+            </label>
+            <textarea
+              type="text"
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              className="bg-gray p-2 text-black outline-none rounded-md"
+            ></textarea>
+          </div>
           <button
             type="submit"
-            className="bg-yellow duration-700 cursor-pointer p-2 roumd text-md font-sketch text-black rounded-md"
+            className="bg-yellow duration-700 col-span-2 cursor-pointer p-2 roumd text-md font-sketch text-black rounded-md"
           >
-            Submit
+            Update
           </button>
         </form>
       </div>

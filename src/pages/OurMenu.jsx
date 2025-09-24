@@ -59,8 +59,9 @@ const OurMenu = () => {
         {filteredMenu.map((product, index) => (
           <div
             key={index}
-            className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col items-center"
+            className="bg-white relative shadow-md rounded-lg overflow-hidden flex flex-col items-center"
           >
+              {product.size ? <p className="absolute capitalize top-3 right-3 z-50 bg-yellow px-2 py-1 text-sm rounded-md text-charkol font-medium">{product.size}</p>:null}
             <img
               src={`${API_URL}/${product.imageUrl}`}
               alt={product.name}
