@@ -40,7 +40,7 @@ const SetPassword = () => {
             type="text"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
-            className="p-2 rounded-md w-full bg-gray outline-none focus:ring-2 focus:ring-yellow"
+            className="p-2 rounded-md w-full bg-gray text-charkol outline-none focus:ring-2 focus:ring-yellow"
           />
         </div>
       
