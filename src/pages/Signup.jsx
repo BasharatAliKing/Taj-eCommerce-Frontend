@@ -39,7 +39,8 @@ const Signup = () => {
     }
   };
   return (
-    <div className="h-screen flex items-center justify-center bg-charkol bg-center bg-cover bg-no-repeat bg-fixed overflow-y-auto">
+    <div className="relative top-0 md:h-screen bg-cover bg-center bg-[url(/home-bg.jpg)]">
+      <div className=" md:absolute pt-[500px] md:pt-0 pb-10 inset-0 bg-[#221b4b80] bg-opacity-40 flex flex-col justify-center items-center text-white px-6">
       <form
         onSubmit={handleSubmit}
         className="relative p-5 bg-[#383838]  m-5 w-full sm:3/4 md:w-2/4  lg:w-1/4 flex flex-col gap-3 rounded-lg"
@@ -96,6 +97,7 @@ const Signup = () => {
           Submit
         </button>
       </form>
+      </div>
     </div>
   );
 };

@@ -37,6 +37,7 @@ import AdminViewOrder from "./pages/admin/Orders/AdminViewOrder";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Logout from "./pages/Logout";
+import ForgotPassword from "./pages/ForgotPassword";
 
 const App = () => {
    const {user}=useContext(UserContext);
@@ -54,6 +55,7 @@ const App = () => {
       <Routes>
         <Route>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/forgot-password" element={<ForgotPassword/>} />
           <Route path="/signup" element={<Signup/>} />
             <Route path="/logout" element={<Logout />} />
            <Route path="/" element={<Home/>} />
