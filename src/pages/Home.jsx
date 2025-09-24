@@ -83,7 +83,7 @@ const Home = () => {
           className="container w-full flex flex-col gap-10"
         >
           <img src="/our-food-menus--large.png" className="md:w-[50%]" alt="" />
-         <ul className=" md:w-[50%]  text-charkol md:flex flex-wrap gap-y-5 gap-x-3 items-start font-semibold text-base lg:text-lg">
+         <ul className=" md:w-[50%]  text-charkol flex flex-wrap gap-y-5 gap-x-3 items-start font-semibold text-base lg:text-lg">
             <Link
               to="/our-menu"
               className=" capitalize bg-yellow duration-500 hover:scale-105 px-3 py-2 text-sm font-medium rounded-md text-charkol"
