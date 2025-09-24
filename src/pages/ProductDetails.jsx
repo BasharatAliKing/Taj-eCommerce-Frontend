@@ -144,7 +144,7 @@ const suggestedItems = allItems.filter((food) =>
       <div className="grid md:grid-cols-2 gap-8 px-8">
         {/* Product Image */}
         <div className="relative">
-         {item.size ?    <p className="absolute top-5 right-5 z-50 bg-yellow px-3 py-2 rounded-md text-charkol font-semibold">{item.size}</p>:null}
+         {item.size ?    <p className="absolute capitalize top-5 right-5 z-50 bg-yellow px-3 py-2 rounded-md text-charkol font-semibold">{item.size}</p>:null}
           <img
             src={`${API_URL}/${item.imageUrl}`}
             alt={item.name}
