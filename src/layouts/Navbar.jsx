@@ -17,7 +17,7 @@ const Navbar = () => {
         className="w-[30%] md:w-[10%] my-5 rounded-full"
       />
       {/* Toggle Button */}
-      <div
+      {/* <div
         onClick={() => setNavbar(!navbar)}
         className="fixed md:hidden right-3 top-5 z-50 cursor-pointer"
       >
@@ -28,7 +28,7 @@ const Navbar = () => {
             <FaBars className="text-xl text-yellow font-bold" />
           )}
         </div>
-      </div>
+      </div> */}
       {/* Mobile Menu Overlay */}
       {navbar && (
         <div className="fixed bg-charkol h-full overflow-scroll w-full left-0 top-0 z-40">

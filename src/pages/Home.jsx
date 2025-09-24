@@ -24,12 +24,12 @@ const Home = () => {
       {/* welcome here */}
       <Welcome />
       {/* food to make */}
-      <section className="relative h-[60vh] lg:h-[120vh] bg-cover bg-center bg-[url(/bbq.webp)]">
-        {/* <img
+      {/* <section className="relative h-[60vh] lg:h-[120vh] bg-cover bg-center bg-[url(/bbq.webp)]">
+        <img
           src="/hungry-lets-fix.png"
           className="absolute -top-15 md:-top-25 right-5 md:right-0 md:left-20 z-10 w-[30%] md:w-[15%]"
           alt="my-img"
-        /> */}
+        />
         <img
           data-aos="flip-right"
           src="/stars.svg"
@@ -51,7 +51,7 @@ const Home = () => {
             alt=""
           />
         </div>
-      </section>
+      </section> */}
       {/* food-Menus */}
       <div id="food-menu" className="relative py-16 bg-[#4A4A4A]">
         <img
@@ -83,7 +83,7 @@ const Home = () => {
             </button> */}
           </div>
         </div>
-        <div className="md:absolute flex flex-col mt-10 md:mt-auto gap-5 right-20 w-[300px] mx-auto top-70  z-20">
+        <div className="md:absolute flex flex-col mt-0 md:mt-auto gap-5 right-20 w-[300px] mx-auto top-30  z-20">
           <img
             data-aos="flip-right"
             src="/sparklewowed.png"
@@ -100,11 +100,11 @@ const Home = () => {
         </div>
       </div>
       {/* repeating background */}
-      <div className="relative py-16 bg-cover bg-center bg-[url(/repeating-background.png)]">
+      {/* <div className="relative py-16 bg-cover bg-center bg-[url(/repeating-background.png)]">
         <div className="container">
           <img data-aos="zoom-in-up" src="/100-superlicious.png" alt="" />
         </div>
-      </div>
+      </div> */}
       <div className="flex absolute w-full">
         <img
           data-aos="flip-right"
@@ -122,6 +122,28 @@ const Home = () => {
       </div>
       {/* my lahore rewards */}
       {/* <Rewards/> */}
+       {/* yellow line image */}
+      <div className="absolute z-10 hidden md:flex lg:mt-10 mx-auto w-full">
+        <svg
+          width="100%"
+          height="100"
+          viewBox="0 0 1200 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g fill="#f0d200">
+            <polygon points="0,0 60,0 100,100 40,100" />
+            <polygon points="120,0 180,0 220,100 160,100" />
+            <polygon points="240,0 300,0 340,100 280,100" />
+            <polygon points="360,0 420,0 460,100 400,100" />
+            <polygon points="480,0 540,0 580,100 520,100" />
+            <polygon points="600,0 660,0 700,100 640,100" />
+            <polygon points="720,0 780,0 820,100 760,100" />
+            <polygon points="840,0 900,0 940,100 880,100" />
+            <polygon points="960,0 1020,0 1060,100 1000,100" />
+            <polygon points="1080,0 1140,0 1180,100 1120,100" />
+          </g>
+        </svg>
+      </div>
       <div className="flex flex-col">
         <OurVenues />
       </div>

@@ -11,7 +11,7 @@ const Welcome = () => {
         </div>
       </div>
       {/* yellow line image */}
-      <div className="absolute z-10 hidden md:flex lg:-mt-15 mx-auto w-full">
+      <div className="absolute z-10 hidden md:flex lg:-mt-40 mx-auto w-full">
         <svg
           width="100%"
           height="100"

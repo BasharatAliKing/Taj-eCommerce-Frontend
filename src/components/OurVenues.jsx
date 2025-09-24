@@ -23,8 +23,8 @@ const venues=[
 const OurVenues = () => {
    
   return (
-   <div id='where-to-find-us' className="relative bg-cover bg-center bg-[url(/wheretofindus.jpg)]">
-      <div className="flex flex-col gap-20 bg-[#221b4b80] py-10  md:py-30">
+   <div id='where-to-find-us' className="relative bg-charkol">
+      <div className="flex flex-col gap-20 bg-charkol py-10  md:py-30">
          <img  data-aos="flip-up" src="/our-venues-far-and-wide.png" className='mx-auto mt-10 w-[70%] md:w-[30%]' alt="" />
     <div data-aos="zoom-in-up" className="hidden md:flex max-w-[800px] mx-auto">
       
