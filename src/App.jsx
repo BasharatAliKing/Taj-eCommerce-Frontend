@@ -38,6 +38,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Logout from "./pages/Logout";
 import ForgotPassword from "./pages/ForgotPassword";
+import SetPassword from "./pages/SetPassword";
 
 const App = () => {
    const {user}=useContext(UserContext);
@@ -56,6 +57,7 @@ const App = () => {
         <Route>
           <Route path="/login" element={<Login/>}/>
           <Route path="/forgot-password" element={<ForgotPassword/>} />
+          <Route path="/reset-password/:token" element={<SetPassword/>} />
           <Route path="/signup" element={<Signup/>} />
             <Route path="/logout" element={<Logout />} />
            <Route path="/" element={<Home/>} />
