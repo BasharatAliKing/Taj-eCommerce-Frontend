@@ -20,6 +20,8 @@ const SetPassword = () => {
     if(res.ok){
       toast.success(data.message);  
       navigate("/login");
+     }else{
+      toast.error(data.message || "Failed to Update password")
      }
     }
   return (
