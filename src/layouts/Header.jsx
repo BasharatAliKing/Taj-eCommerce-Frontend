@@ -61,20 +61,24 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <nav className=" bg-yellow hidden md:flex py-2">
+      <nav className="bg-yellow hidden md:flex py-2">
         <div className="container py-4">
-          <ul className=" justify-around text-charkol md:flex flex-wrap items-center font-semibold text-base lg:text-lg">
-            <Link to="/our-menu">Our Menu</Link>
+          <ul className=" text-charkol flex flex-wrap items-center justify-center gap-x-5 gap-y-3 font-semibold text-base lg:text-lg">
+            <Link
+              className="bg-charkol p-2 py-1 rounded-md text-yellow capitalize"
+              to="/our-menu"
+            >
+              Our Menu
+            </Link>
             {category.map((val, index) => (
               <Link
                 key={index}
                 to={`/product/${val.categoryname}`}
-                className=" capitalize"
+                className="bg-charkol p-2 py-1 rounded-md text-yellow capitalize"
               >
                 {val.categoryname}
               </Link>
             ))}
-            <li></li>
             <button className="bg-charkol text-yellow p-2 py-1 duration-500 cursor-pointer hover:scale-95 rounded-md">
               {user.role === "admin" ? (
                 <Link to="/admin">Dashboard</Link>
@@ -87,7 +91,7 @@ const Header = () => {
           </ul>
         </div>
       </nav>
-      <div className="bg-yellow   text-charkol md:hidden py-2">
+      <div className="bg-yellow text-charkol md:hidden py-2">
         <div className="container flex flex-row items-center justify-between">
           <div
             onClick={() => {
@@ -109,18 +113,27 @@ const Header = () => {
       {menu ? (
         <nav className=" bg-yellow py-2 mt-[2px]">
           <div className="container flex flex-col gap-5 md:flex-row text-center justify-around text-charkol md:flex items-center font-medium text-base">
-            <Link   onClick={()=>{setMenu(false)}} to="/our-menu">Our Menu</Link>
+            <Link
+              onClick={() => {
+                setMenu(false);
+              }}
+              to="/our-menu"
+            >
+              Our Menu
+            </Link>
             {category.map((val, index) => (
               <Link
                 key={index}
-                onClick={()=>{setMenu(false)}}
+                onClick={() => {
+                  setMenu(false);
+                }}
                 to={`/product/${val.categoryname}`}
                 className=" capitalize"
               >
                 {val.categoryname}
               </Link>
             ))}
-           <button className="bg-charkol text-yellow p-2 py-1 duration-500 cursor-pointer hover:scale-95 rounded-md">
+            <button className="bg-charkol text-yellow p-2 py-1 duration-500 cursor-pointer hover:scale-95 rounded-md">
               {user.role === "admin" ? (
                 <Link to="/admin">Dashboard</Link>
               ) : user.role === "user" ? (
