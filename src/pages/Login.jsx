@@ -32,7 +32,7 @@ const Login = () => {
       if (response.ok) {
         toast.success("User Log In Successfully");
         setLoginForm({ email: "", password: "" });
-        navigate("/our-menu");
+        navigate("/home");
         storetokeninLS(res_data.token);
         // setRole(res_data.role);
       } else {

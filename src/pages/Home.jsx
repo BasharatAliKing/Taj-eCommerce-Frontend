@@ -82,7 +82,7 @@ const Home = () => {
           data-aos="fade-up-right"
           className="container w-full flex flex-col gap-10"
         >
-          <img src="/our-food-menus--large.png" className="md:w-[50%]" alt="" />
+          <img src="/food-menu.png" className="md:w-[50%]" alt="" />
          <ul className=" md:w-[50%]  text-charkol flex flex-wrap gap-y-5 gap-x-3 items-start font-semibold text-base lg:text-lg">
             <Link
               to="/our-menu"

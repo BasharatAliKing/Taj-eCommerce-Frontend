@@ -7,7 +7,7 @@ import { FaFacebookF } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-    <img src="/footer-tp.webp" alt="" />
+    {/* <img src="/footer-tp.webp" alt="" /> */}
    <div id='contact-us' className="bg-charkol relative py-5 sm:py-10 md:py-20 pb-0 md:pb-0 bg-center bg-cover">
         {/* <img
           src="/footer-line.png"
