@@ -55,20 +55,20 @@ const OurMenu = () => {
         </h2>
       </div>
       {/* Product Grid */}
-      <div className="container mx-auto px-6 py-12 grid gap-8 grid-cols-1 sm:grid-cols-2">
+      <div className="container mx-auto px-6 py-12 grid gap-8 grid-cols-1 md:grid-cols-2">
         {filteredMenu.map((item, index) => (
-    <Link key={index} to={`/product-details/${item._id}`} class="flex items-start rounded-2xl  overflow-hidden hover:shadow-lg transition-shadow duration-300 p-4">
-  <div class="w-24 h-24 relative overflow-hidden flex-shrink-0">
+    <Link key={index} to={`/product-details/${item._id}`} class="flex flex-col sm:flex-row items-start rounded-2xl  overflow-hidden hover:shadow-lg transition-shadow duration-300 p-4">
+  <div class="sm:w-24 sm:h-24 relative overflow-hidden flex-shrink-0">
     <img
       src={`${API_URL}/${item.imageUrl}`}
       alt="Mixed Grill Starter"
       class="w-full h-full object-cover rounded-xl"
     />
-       
+       {item.size ? <p className="absolute flex sm:hidden capitalize top-3 right-3 z-50 bg-yellow px-2 py-1 text-sm rounded-md text-charkol font-medium">{item.size}</p>:null}
   </div>
-  <div class="ml-4 my-auto flex-1">
+  <div class="sm:ml-4 my-auto flex-1">
     <div class="flex justify-between items-center pb-1 mb-1 border-b-2 border-gray-400 border-dotted">
-      <span class="text-lg font-semibold flex gap-3 ">{item.name}{item.size ? <p className="capitalize  bg-yellow px-2 py-1 text-sm  text-charkol font-medium rounded-md">{item.size}</p>:null}</span>
+      <span class="text-lg font-semibold flex flex-col sm:flex-row gap-3 ">{item.name}{item.size ? <p className="capitalize hidden sm:flex mb-auto bg-yellow px-2 py-1 text-sm  text-charkol font-medium rounded-md">{item.size}</p>:null}</span>
       <span class="text-charkol font-bold">£{item.price}</span>
     </div>
     <p class="text-gray-600 text-sm leading-snug">
