@@ -84,29 +84,30 @@ const Product = () => {
       </div>
 
       {/* Product Grid */}
-      <div className="container mx-auto px-6 py-12 grid gap-8 md:grid-cols-3 sm:grid-cols-2">
-        {paginatedProducts.map((product, index) => (
-          <div
-            key={index}
-            className="bg-white relative shadow-md rounded-lg overflow-hidden flex flex-col items-center"
-          >
-           {product.size ? <p className="absolute capitalize top-3 right-3 z-50 bg-yellow px-2 py-1 text-sm rounded-md text-charkol font-medium">{product.size}</p>:null}
-            <img
-              src={`${API_URL}/${product.imageUrl}`}
-              alt={product.name}
-              className="w-full h-64 object-cover"
-            />
-            <div className="p-4 text-center flex w-full font-sketch flex-col gap-2">
-              <h3 className="text-lg font-semibold">{product.name}</h3>
-              <p className="text-gray-700">£{product.price}</p>
-              <Link
-                to={`/product-details/${product._id}`}
-                className="cursor-pointer bg-[#FFD600] text-black  font-semibold px-6 py-2 rounded hover:bg-yellow-400 transition"
-              >
-                Buy now
-              </Link>
-            </div>
-          </div>
+      <div className="container mx-auto px-6 py-12 grid gap-8 grid-cols-1 sm:grid-cols-2">
+        {paginatedProducts.map((item, index) => (
+           <Link key={index} to={`/product-details/${item._id}`} class="flex bg-white shadow-md items-start rounded-2xl  overflow-hidden hover:shadow-lg transition-shadow duration-300 p-4">
+           <div class="w-24 h-24 relative overflow-hidden flex-shrink-0">
+             <img
+               src={`${API_URL}/${item.imageUrl}`}
+               alt="Mixed Grill Starter"
+               class="w-full h-full object-cover rounded-xl"
+             />
+                
+           </div>
+           <div class="ml-4 my-auto flex-1">
+             <div class="flex justify-between items-center pb-1 mb-1 border-b-2 border-gray-400 border-dotted">
+               <span class="text-lg font-semibold flex gap-3 ">{item.name}{item.size ? <p className="capitalize  bg-yellow px-2 py-1 text-sm  text-charkol font-medium rounded-md">{item.size}</p>:null}</span>
+               <span class="text-charkol font-bold">£{item.price}</span>
+             </div>
+             <p class="text-gray-600 text-sm leading-snug">
+            {item.description
+             ?.split(" ")
+             .slice(0, 10)
+             .join(" ") + (item.description?.split(" ").length > 10 ? "..." : "")}
+             </p>
+           </div>
+         </Link>
         ))}
       </div>
       <div className="container mt-10 flex justify-between items-center p-4">
