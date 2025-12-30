@@ -61,7 +61,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <nav className="bg-yellow hidden md:flex py-2">
+      {/* <nav className="bg-yellow hidden md:flex py-2">
         <div className="container py-4">
           <ul className=" text-charkol flex flex-wrap items-center justify-center gap-x-5 gap-y-3 font-semibold text-base lg:text-lg">
             <Link
@@ -90,7 +90,7 @@ const Header = () => {
             </button>
           </ul>
         </div>
-      </nav>
+      </nav> */}
       <div className="bg-yellow text-charkol md:hidden py-2">
         <div className="container flex flex-row items-center justify-between">
           <div

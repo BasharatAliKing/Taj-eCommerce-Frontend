@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import Header from '../layouts/MenuHeader';
+import Hero from '../components/MenuHero';
+import BestSellers from '../components/BestSellers';
+import FoodMenu from '../components/FoodMenu';
+import Footer from '../layouts/MenuFooter';
 const API_URL = import.meta.env.VITE_API_URL;  // ✅ Correct way in Vite
 
 const OurMenu = () => {
@@ -47,15 +52,22 @@ const OurMenu = () => {
     );
   }
   return (
-    <div className="bg-[#fdfdfb] flex flex-col gap-9 py-10">
+    <div className="bg-[url('/white-brick2.png')] bg-no-repeat bg-cover ">
+     <div className="bg-[#ffffffab] flex flex-col gap-9 py-10">
+      {/* <Header /> */}
+      <Hero />
+      <BestSellers />
+      <FoodMenu />
+      <Footer />
+     </div>
       {/* Header Section */}
-      <div className="flex container flex-col gap-3">
+      {/* <div className="flex container flex-col gap-3">
         <h2 className="text-3xl font-bold text-charkol capitalize">
           Our Menu
         </h2>
-      </div>
+      </div> */}
       {/* Product Grid */}
-      <div className="container mx-auto px-6 py-12 grid gap-8 grid-cols-1 md:grid-cols-2">
+      {/* <div className="container mx-auto px-6 py-12 grid gap-8 grid-cols-1 md:grid-cols-2">
         {filteredMenu.map((item, index) => (
     <Link key={index} to={`/product-details/${item._id}`} class="flex flex-col sm:flex-row items-start rounded-2xl  overflow-hidden hover:shadow-lg transition-shadow duration-300 p-4">
   <div class="sm:w-24 sm:h-24 relative overflow-hidden flex-shrink-0">
@@ -102,7 +114,7 @@ const OurMenu = () => {
           //   </div>
           // </div>
         ))}
-      </div>
+      </div> */}
     </div>
   )
 }
