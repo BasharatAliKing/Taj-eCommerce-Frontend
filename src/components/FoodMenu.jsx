@@ -50,7 +50,7 @@ export default function FoodMenu() {
   }, []);
 
   return (
-    <section className="py-10 px-6">
+    <section className="py-10 container">
       <h3 className="text-4xl font-bold text-yellow text-center mb-8">
         Food Menu
       </h3>
@@ -74,7 +74,7 @@ export default function FoodMenu() {
       </div>
 
       {/* ================= FOOD ITEMS ================= */}
-      <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-8 mx-auto">
         {filteredFoods.length > 0 ? (
           filteredFoods.map((item) => (
             <MenuItem
