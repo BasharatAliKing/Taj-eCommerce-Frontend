@@ -100,19 +100,19 @@ function MenuItem({ id, img, name, desc, price }) {
   return (
     <Link
       to={`/product-details/${id}`}
-      className="flex hover:shadow-xl p-5 rounded-md justify-between gap-3 pb-4"
+      className="flex hover:shadow-xl p-5 rounded-md  gap-3 pb-4"
     >
       <img
         src={`${API_URL}/${img}`}
         className="h-20 w-20 my-auto rounded-md"
         alt=""
       />
-      <div>
-        <div className="border-b border-dotted flex justify-between items-center">
-          <h4 className="font-semibold text-lg ">{name}</h4>
+      <div className="w-full">
+        <div className="border-b-[2px] border-dotted flex justify-between items-center">
+          <h4 className="font-bold text-lg uppercase ">{name}</h4>
           <span className="font-bold text-yellow">{price}</span>
         </div>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm sm:text-base md:text-lg font-light text-gray-500">
           {" "}
           {desc?.split(" ").slice(0, 18).join(" ")}
           {desc?.split(" ").length > 20 && " ..."}

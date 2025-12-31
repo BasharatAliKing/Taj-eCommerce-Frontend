@@ -20,7 +20,7 @@ export default function Hero() {
               "MilkShakes",
               "Burgers",
             ]}
-            loop={5}
+            loop={6}
             cursor
             cursorStyle="|"
             typeSpeed={100}

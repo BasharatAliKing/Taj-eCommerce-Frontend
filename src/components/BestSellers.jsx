@@ -50,7 +50,7 @@ export default function BestSellers() {
               slidesPerView: 3,
             },
           }}
-          className="w-full !overflow-visible"
+          className="w-full "
         >
           {filteredMenu.map((item, i) => (
             <SwiperSlide key={i} className="flex">
