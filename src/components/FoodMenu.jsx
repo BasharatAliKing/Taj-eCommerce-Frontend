@@ -64,8 +64,8 @@ export default function FoodMenu() {
             className={`p-2 font-medium text-sm py-1 cursor-pointer rounded-md capitalize transition-all
               ${
                 selectedCategory === val.categoryname
-                  ? "bg-yellow text-white"
-                  : "bg-charkol text-yellow hover:bg-yellow hover:text-white"
+                  ? "bg-[#e0c600]"
+                  : "bg-yellow text-black hover:bg-yellow"
               }`}
           >
             {val.categoryname}
@@ -112,7 +112,7 @@ function MenuItem({ id, img, name, desc, price }) {
           <h4 className="font-bold text-lg uppercase ">{name}</h4>
           <span className="font-bold text-yellow">{price}</span>
         </div>
-        <p className="text-sm sm:text-base md:text-lg font-light text-gray-500">
+        <p className="text-sm sm:text-base md:text-lg font-light text-gray-300">
           {" "}
           {desc?.split(" ").slice(0, 18).join(" ")}
           {desc?.split(" ").length > 20 && " ..."}

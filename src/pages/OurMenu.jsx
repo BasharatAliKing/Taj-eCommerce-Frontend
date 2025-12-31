@@ -52,14 +52,12 @@ const OurMenu = () => {
     );
   }
   return (
-    <div className="bg-[url('/white-brick2.png')] bg-no-repeat bg-cover ">
-     <div className="bg-[#ffffffab] flex flex-col gap-9 py-10">
-      {/* <Header /> */}
+    <div className="bg-charkol bg-no-repeat bg-cover text-white">
+     {/* <Header /> */}
       <Hero />
       <BestSellers />
       <FoodMenu />
       <Footer />
-     </div>
       {/* Header Section */}
       {/* <div className="flex container flex-col gap-3">
         <h2 className="text-3xl font-bold text-charkol capitalize">
