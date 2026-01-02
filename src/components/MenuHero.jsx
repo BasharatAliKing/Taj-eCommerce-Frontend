@@ -34,9 +34,9 @@ export default function Hero() {
           A very popular local establishment which has been around for over 20
           years, providing a wide range of quality food in Burnley
         </p>
-        <button className="bg-yellow hover:bg-[#d3ba00] duration-500 cursor-pointer font-bold text-black hover:text-white px-6 py-2 rounded-lg">
+        <a href="#our-menu" className="bg-yellow hover:bg-[#d3ba00] duration-500 cursor-pointer font-bold text-black hover:text-white px-6 py-2 rounded-lg">
           View Menu
-        </button>
+        </a>
       </div>
      </div>
     </section>

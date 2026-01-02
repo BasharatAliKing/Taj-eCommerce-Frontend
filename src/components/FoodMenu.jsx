@@ -52,7 +52,7 @@ export default function FoodMenu() {
   }, []);
 
   return (
-    <section className="container">
+    <section id="our-menu" className="container">
      <div className="py-10 md:py-16">
        <h3 className="text-4xl font-bold text-yellow text-center mb-8">
         Food Menu
