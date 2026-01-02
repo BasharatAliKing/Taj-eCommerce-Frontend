@@ -56,7 +56,7 @@ export default function BestSellers() {
                 {/* Card */}
                 <Link
                   to={`/product-details/${item._id}`}
-                  className="group flex flex-col bg-[#949494] rounded-2xl p-6 max-w-sm mx-auto 
+                  className="group flex flex-col bg-[#656565] rounded-2xl p-6 max-w-sm mx-auto 
                   transition-all duration-500"
                 >
                   {/* Image */}
