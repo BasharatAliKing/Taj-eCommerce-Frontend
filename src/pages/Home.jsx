@@ -194,16 +194,7 @@ const Home = () => {
           </svg>
         </div>
       </div>
-      {/* fusion to be celebrated */}
-      {/* <Fusion/> */}
-      {/* instagram post */}
-      {/* <div className="bg-charkol md:pt-40 py-30 md:py-16 -mt-10">
-        <h1 className="text-xl text-white mt-5 font-bold uppercase text-center font-dancing">
-          Checkout our Instagram for latest updates
-        </h1>
-      </div> */}
-      {/* Catering for Special Occasions */}
-      {/* <Catering/> */}
+   
       <Footer />
     </>
   );

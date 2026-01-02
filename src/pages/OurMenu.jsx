@@ -57,62 +57,29 @@ const OurMenu = () => {
       <Hero />
       <BestSellers />
       <FoodMenu />
-      <Footer />
-      {/* Header Section */}
-      {/* <div className="flex container flex-col gap-3">
-        <h2 className="text-3xl font-bold text-charkol capitalize">
-          Our Menu
-        </h2>
-      </div> */}
-      {/* Product Grid */}
-      {/* <div className="container mx-auto px-6 py-12 grid gap-8 grid-cols-1 md:grid-cols-2">
-        {filteredMenu.map((item, index) => (
-    <Link key={index} to={`/product-details/${item._id}`} class="flex flex-col sm:flex-row items-start rounded-2xl  overflow-hidden hover:shadow-lg transition-shadow duration-300 p-4">
-  <div class="sm:w-24 sm:h-24 relative overflow-hidden flex-shrink-0">
-    <img
-      src={`${API_URL}/${item.imageUrl}`}
-      alt="Mixed Grill Starter"
-      class="w-full h-full object-cover rounded-xl"
-    />
-       {item.size ? <p className="absolute flex sm:hidden capitalize top-3 right-3 z-50 bg-yellow px-2 py-1 text-sm rounded-md text-charkol font-medium">{item.size}</p>:null}
-  </div>
-  <div class="sm:ml-4 my-auto flex-1">
-    <div class="flex justify-between items-center pb-1 mb-1 border-b-2 border-gray-400 border-dotted">
-      <span class="text-lg font-semibold flex flex-col sm:flex-row gap-3 ">{item.name}{item.size ? <p className="capitalize hidden sm:flex mb-auto bg-yellow px-2 py-1 text-sm  text-charkol font-medium rounded-md">{item.size}</p>:null}</span>
-      <span class="text-charkol font-bold">£{item.price}</span>
-    </div>
-    <p class="text-gray-600 text-sm leading-snug">
-   {item.description
-    ?.split(" ")
-    .slice(0, 10)
-    .join(" ") + (item.description?.split(" ").length > 10 ? "..." : "")}
-    </p>
-  </div>
-</Link>
-
-          // <div
-          //   key={index}
-          //   className="bg-white relative shadow-md rounded-lg overflow-hidden flex flex-col items-center"
-          // >
-          //     {product.size ? <p className="absolute capitalize top-3 right-3 z-50 bg-yellow px-2 py-1 text-sm rounded-md text-charkol font-medium">{product.size}</p>:null}
-          //   <img
-          //     src={`${API_URL}/${product.imageUrl}`}
-          //     alt={product.name}
-          //     className="w-full h-64 object-cover"
-          //   />
-          //   <div className="p-4 text-center flex w-full font-sketch flex-col gap-2">
-          //     <h3 className="text-lg font-semibold">{product.name}</h3>
-          //     <p className="text-gray-700">£{product.price}</p>
-          //     <Link
-          //       to={`/product-details/${product._id}`}
-          //       className="cursor-pointer bg-[#FFD600] text-black font-semibold px-6 py-2 rounded hover:bg-yellow-400 transition"
-          //     >
-          //       Buy now
-          //     </Link>
-          //   </div>
-          // </div>
-        ))}
-      </div> */}
+      <div className="hidden md:flex w-full mt-10 relative z-10">
+        <div className="absolute -mt-15 w-full">
+          <svg
+            width="100%"
+            height="100"
+            viewBox="0 0 1200 100"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g fill="#f0d200">
+              <polygon points="0,0 60,0 100,100 40,100" />
+              <polygon points="120,0 180,0 220,100 160,100" />
+              <polygon points="240,0 300,0 340,100 280,100" />
+              <polygon points="360,0 420,0 460,100 400,100" />
+              <polygon points="480,0 540,0 580,100 520,100" />
+              <polygon points="600,0 660,0 700,100 640,100" />
+              <polygon points="720,0 780,0 820,100 760,100" />
+              <polygon points="840,0 900,0 940,100 880,100" />
+              <polygon points="960,0 1020,0 1060,100 1000,100" />
+              <polygon points="1080,0 1140,0 1180,100 1120,100" />
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
   )
 }

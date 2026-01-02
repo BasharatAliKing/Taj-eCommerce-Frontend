@@ -16,19 +16,6 @@ const Navbar = () => {
         alt="logo"
         className="w-[30%] md:w-[10%] my-5 rounded-full"
       />
-      {/* Toggle Button */}
-      {/* <div
-        onClick={() => setNavbar(!navbar)}
-        className="fixed md:hidden right-3 top-5 z-50 cursor-pointer"
-      >
-        <div className="p-2 border-white border-2 rounded-full bg-black">
-          {navbar ? (
-            <IoCloseSharp className="text-xl text-yellow font-bold" />
-          ) : (
-            <FaBars className="text-xl text-yellow font-bold" />
-          )}
-        </div>
-      </div> */}
       {/* Mobile Menu Overlay */}
       {navbar && (
         <div className="fixed bg-charkol h-full overflow-scroll w-full left-0 top-0 z-40">

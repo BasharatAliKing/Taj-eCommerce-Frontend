@@ -20,6 +20,8 @@ export default function FoodMenu() {
       });
       const json = await response.json();
       setCategory(json.categories);
+        // ✅ SET FIRST CATEGORY AS DEFAULT
+      setSelectedCategory(json.categories[0].categoryname);
     } catch (error) {
       console.log(error);
     }
@@ -50,8 +52,9 @@ export default function FoodMenu() {
   }, []);
 
   return (
-    <section className="py-10 container">
-      <h3 className="text-4xl font-bold text-yellow text-center mb-8">
+    <section className="container">
+     <div className="py-10 md:py-16">
+       <h3 className="text-4xl font-bold text-yellow text-center mb-8">
         Food Menu
       </h3>
 
@@ -92,6 +95,7 @@ export default function FoodMenu() {
           </p>
         )}
       </div>
+     </div>
     </section>
   );
 }

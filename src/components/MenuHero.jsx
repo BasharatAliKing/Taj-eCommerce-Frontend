@@ -3,8 +3,9 @@ import { Typewriter } from "react-simple-typewriter";
 
 export default function Hero() {
   return (
-    <section className=" py-20 px-6 grid md:grid-cols-2 gap-10 items-center">
-      <img
+    <section className="container">
+     <div className="py-10 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+       <img
         src="/logo.png"
         alt="Briercliffe Logo"
         className="max-w-md mx-auto"
@@ -29,14 +30,15 @@ export default function Hero() {
           />
         </h2>
 
-        <p className="text-gray-300 mb-6">
+        <p className="text-gray-300 font-medium mb-6">
           A very popular local establishment which has been around for over 20
           years, providing a wide range of quality food in Burnley
         </p>
-        <button className="bg-yellow hover:bg-[#d3ba00] duration-500 cursor-pointer font-semibold text-black hover:text-white px-6 py-2 rounded-lg">
+        <button className="bg-yellow hover:bg-[#d3ba00] duration-500 cursor-pointer font-bold text-black hover:text-white px-6 py-2 rounded-lg">
           View Menu
         </button>
       </div>
+     </div>
     </section>
   );
 }
