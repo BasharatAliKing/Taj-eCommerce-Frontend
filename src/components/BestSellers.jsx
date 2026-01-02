@@ -56,7 +56,7 @@ export default function BestSellers() {
                 {/* Card */}
                 <Link
                   to={`/product-details/${item._id}`}
-                  className="group flex flex-col bg-white rounded-2xl p-6 max-w-sm mx-auto 
+                  className="group flex flex-col bg-[#949494] rounded-2xl p-6 max-w-sm mx-auto 
                   transition-all duration-500"
                 >
                   {/* Image */}
@@ -70,11 +70,11 @@ export default function BestSellers() {
 
                   {/* Content */}
                   <div className="mt-4 flex flex-col flex-grow">
-                    <h4 className="font-bold text-xl md:text-2xl text-black">
+                    <h4 className="font-bold text-xl md:text-2xl text-white">
                       {item.name}
                     </h4>
 
-                    <p className="text-sm text-gray-600 mt-2 flex-grow">
+                    <p className="text-sm text-gray-300 mt-2 flex-grow">
                       {item.description?.split(" ").slice(0, 20).join(" ")}...
                     </p>
 
